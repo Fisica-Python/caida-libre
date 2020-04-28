@@ -14,6 +14,7 @@ import os
 os.system('clear')
 
 #Creamos un Menu
+
 print('''
  CAÍDA LIBRE
  
@@ -47,6 +48,7 @@ def tiempo_2(v,y):
  return t2
 
 #El próximo bloque 'If' se ejecuta según la opción deseada
+
 if opcion == 1:
  
  print('') #Dejamos un espacio
@@ -80,7 +82,7 @@ elif opcion == 2:
  v_0 = float(input('Ingrese la velocidad inicial del cuerpo
   (en m/s) recuerde que será negativa cuando se lance hacia abajo
   y positiva si se lanza hacia arriba: v_0 = ')) 
- #creamos la variable v_0
+  #creamos la variable v_0
  
  opcion_2 = str(input('¿Qué desea saber? (altura, tiempo): '))
  if opcion_2 == 'altura':
@@ -91,8 +93,7 @@ elif opcion == 2:
  else:
   y=float(input('Ingrese la altura del cuerpo (en metros),
    hallaremos el tiempo que demora en llegar hasta allí. y= '))
-  if v_0**2-4*(-4.9)*(h_0-y) >=0 : #Es el discriminante de la
-  #función
+  if v_0**2-4*(-4.9)*(h_0-y) >=0 : #Es el discriminante de la función
    t1 = round(tiempo_1(v_0,h_0-y),2)
    t2 = round(tiempo_2(v_0,h_0-y),2)
    if t1 =0:
@@ -124,9 +125,12 @@ elif opcion == 3:
   # tiempo ( v = v_0 -g.t) despejamos el tiempo, imponiendo la condición
   # de que la velocidad en la altura máxima es cero. Llamaremos a esta
   # variable t_hmax
+ 
   t_hmax=round(v_0/9.8,2)
+ 
   #Ahora calculamos la altura máxima(h_max) sustituyendo el tiempo
   # por t_hmax en la función pos_vertical()
+ 
   h_max=round(pos_vertical(h_0,v_0,t_hmax),2)
   print('El cuerpo alcanza su máxima altura en un tiempo de ',
    t_hmax,' segundos, y tiene un valor de ', h_max, ' metros.')
@@ -139,14 +143,18 @@ elif opcion ==4:
  print('')
  t_caida = float(input('Ingrese el tiempo de caída (en segundos),
   t_caída= '))#ingresamos la variable t_caida
+ 
  #A partir de la ecuación de posición y = h_0 + v_0.t - 1/2.g.t² 
  # despejamos h_0 imponiendo la condición y=0.
+ 
  if t_caida < 0:
   print('Un valor negativo para el tiempo no tiene mucho sentido
    en este contexto. Revise sus datos.')
  else:
   h_0 = round(4.9*t_caida**2,2)
+ 
   #Como el objeto se suelta (asumimos velocidad inicial 0)
+ 
   print('El objeto se suelta desde una altura de ', h_0, ' metros.')
  
 else:
