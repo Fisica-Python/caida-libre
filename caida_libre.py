@@ -52,16 +52,13 @@ def tiempo_2(v,y):
 if opcion == 1:
  
  print('') #Dejamos un espacio
- print('Determinaremos el tiempo de caída libre a partir 
-    de algunos datos.')
+ print('Determinaremos el tiempo de caída libre a partir  de algunos datos.')
  print('')
  
- h_0 = float(input('Ingrese la altura inicial del cuerpo (en metros)
-   : h_0 = ')) #creamos la variable h_0 (es un número real por 
-   #eso usamos float)
- v_0 = float(input('Ingrese la velocidad inicial del cuerpo (en m/s)
-   recuerde que será negativa cuando se lance hacia abajo y positiva
-   si se lanza hacia arriba: v_0 = ')) #creamos la variable v_0
+ h_0 = float(input('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')) #creamos la variable h_0 (es un número real por 
+ #eso usamos float)
+ v_0 = float(input('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = '))
+ #creamos la variable v_0
 
  #a partir de la ecuación de posición: y = h_0 +v_0t -gt²/2 
  #despejamos t igualando y = 0 (pues está en el suelo!)
@@ -74,52 +71,38 @@ if opcion == 1:
  
 elif opcion == 2:
  print('') #Dejamos un espacio
- print('Podemos conocer la altura de un objeto en determinado
-  tiempo o bien saber en qué momento se encuentra para cierta altura.')
+ print('Podemos conocer la altura de un objeto en determinado tiempo o bien saber en qué momento se encuentra para cierta altura.')
  print('')
- h_0 = float(input('Ingrese la altura inicial del cuerpo
-  (en metros): h_0 = ')) #creamos la variable h_0
- v_0 = float(input('Ingrese la velocidad inicial del cuerpo
-  (en m/s) recuerde que será negativa cuando se lance hacia abajo
-  y positiva si se lanza hacia arriba: v_0 = ')) 
+ h_0 = float(input('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')) #creamos la variable h_0
+ v_0 = float(input('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = ')) 
   #creamos la variable v_0
  
  opcion_2 = str(input('¿Qué desea saber? (altura, tiempo): '))
  if opcion_2 == 'altura':
-  t = float(input('Ingrese el tiempo en el que desea conocer
-   la altura del objeto (en segundos): '))
+  t = float(input('Ingrese el tiempo en el que desea conocer la altura del objeto (en segundos): '))
   y = pos_vertical(h_0,v_0,t)
   print('La altura del objeto es de ',round(y,2),' metros')
  else:
-  y=float(input('Ingrese la altura del cuerpo (en metros),
-   hallaremos el tiempo que demora en llegar hasta allí. y= '))
+  y=float(input('Ingrese la altura del cuerpo (en metros), hallaremos el tiempo que demora en llegar hasta allí. y= '))
   if v_0**2-4*(-4.9)*(h_0-y) >=0 : #Es el discriminante de la función
    t1 = round(tiempo_1(v_0,h_0-y),2)
    t2 = round(tiempo_2(v_0,h_0-y),2)
-   if t1 =0:
-    print('El cuerpo pasa por la altura y = ',y,' metros en
-     t = ', t2,' segundos.')
-   elif t1 >= 0 and t2 = 0 and t2 >=0:
-    print('El cuerpo pasa por la altura y = ',y,' metros en 
-     los momentos t1 = ', t1,' segundos y t2 = ',t2, ' segundos.')
+   if t1 == 0:
+    print('El cuerpo pasa por la altura y = ',y,' metros en t = ', t2,' segundos.')
+   elif t1 >= 0 and t2 == 0 and t2 >=0:
+    print('El cuerpo pasa por la altura y = ',y,' metros en los momentos t1 = ', t1,' segundos y t2 = ',t2, ' segundos.')
    else:
-    print('Parece que el cuerpo no pasará por allí en ningún momento. 
-     Es posible que esa altura supere la altura máxima.')
+    print('Parece que el cuerpo no pasará por allí en ningún momento. Es posible que esa altura supere la altura máxima.')
  
 elif opcion == 3:
  
  print('') #Dejamos un espacio
- print ('Calcularemos la altura máxima que alcanza 
-  un objeto lanzado hacia arriba.')
+ print ('Calcularemos la altura máxima que alcanza un objeto lanzado hacia arriba.')
  print('')
- h_0= float(input('Ingrese la altura inicial del cuerpo (en metros)
-  : h_0 = ')) #creamos la variable h_0
- v_0=float(input('Ingrese la velocidad inicial del cuerpo (en m/s)
-  recuerde que será negativa cuando se lance hacia abajo y positiva
-  si se lanza hacia arriba: v_0 = ')) #creamos la variable v_0
+ h_0= float(input('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')) #creamos la variable h_0
+ v_0=float(input('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = ')) #creamos la variable v_0
  if v_0 <= 0:
-  print('Si el objeto parte del reposo o es lanzado hacia abajo,
-   la altura máxima será la altura inicial, es decir ', h_0,' metros.')
+  print('Si el objeto parte del reposo o es lanzado hacia abajo, la altura máxima será la altura inicial, es decir ', h_0,' metros.')
  else:
   #A partir de la ecuación de la velocidad en función del
   # tiempo ( v = v_0 -g.t) despejamos el tiempo, imponiendo la condición
@@ -132,24 +115,19 @@ elif opcion == 3:
   # por t_hmax en la función pos_vertical()
  
   h_max=round(pos_vertical(h_0,v_0,t_hmax),2)
-  print('El cuerpo alcanza su máxima altura en un tiempo de ',
-   t_hmax,' segundos, y tiene un valor de ', h_max, ' metros.')
+  print('El cuerpo alcanza su máxima altura en un tiempo de ', t_hmax,' segundos, y tiene un valor de ', h_max, ' metros.')
  
 elif opcion ==4:
  print('') #Dejamos un espacio
- print ('Suponga que se suelta un objeto desde cierta altura,
-  que llamaremos h_0. Vamos a calcularla suponiendo que conocemos
-  el tiempo de caída (t_caída).')
+ print ('Suponga que se suelta un objeto desde cierta altura, que llamaremos h_0. Vamos a calcularla suponiendo que conocemos el tiempo de caída (t_caída).')
  print('')
- t_caida = float(input('Ingrese el tiempo de caída (en segundos),
-  t_caída= '))#ingresamos la variable t_caida
+ t_caida = float(input('Ingrese el tiempo de caída (en segundos), t_caída= '))#ingresamos la variable t_caida
  
  #A partir de la ecuación de posición y = h_0 + v_0.t - 1/2.g.t² 
  # despejamos h_0 imponiendo la condición y=0.
  
  if t_caida < 0:
-  print('Un valor negativo para el tiempo no tiene mucho sentido
-   en este contexto. Revise sus datos.')
+  print('Un valor negativo para el tiempo no tiene mucho sentido en este contexto. Revise sus datos.')
  else:
   h_0 = round(4.9*t_caida**2,2)
  
