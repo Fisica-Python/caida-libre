@@ -29,10 +29,14 @@ def select_menu_option():
 
 def run():
     while True:
-        os.system("clear")
-        print_menu()
-        opcion = select_menu_option()
-        action_menu(opcion)
+        try:
+            os.system("clear")
+            print_menu()
+            opcion = select_menu_option()
+            action_menu(opcion)
+        except KeyboardInterrupt:
+            salir()
+
 
 
 def action_menu(opcion):
