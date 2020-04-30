@@ -2,16 +2,24 @@ import os
 import sys
 from src import funciones
 
-def print_menu():
-    print('''
-         CAÍDA LIBRE
+def generar_menu(lista):
+    print()
+    num=1
+    for elem in lista:
+        print("     "+str(num) +". " + elem)
+        num+=1
+    print()
 
-         1. Determinar el tiempo de caída.
-         2. Hallar la posición de un objeto a partir de otros datos.
-         3. Conocer la altura máxima de un objeto lanzado hacia arriba.
-         4. ¿Desde qué altura se lanza?
-         5. Salir
-        ''')
+
+
+def print_menu():
+    print()
+    print("CAÍDA LIBRE")
+
+    lista =["Determinar el tiempo de caída.","Hallar la posición de un objeto a partir de otros datos.",
+            "Conocer la altura máxima de un objeto lanzado hacia arriba.","¿Desde qué altura se lanza?",
+            "Salir"]
+    generar_menu(lista)
 
 def print_numero_invalido():
     print("Oops!  Ese no es un número valido. Intenta de nuevo...")
@@ -57,15 +65,8 @@ def caso1():
     v_0 = float(input('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = '))
     #creamos la variable v_0
 
-    #a partir de la ecuación de posición: y = h_0 +v_0t -gt²/2
-    #despejamos t igualando y = 0 (pues está en el suelo!)
-    #como es una ecuación de segundo grado nos arrojará dos resultados
-    #que llamaremos t1 y t2. Descartamos la solución negativa.
-
-    t1 = funciones.tiempo_1(v_0,h_0)
-    t2 = funciones.tiempo_2(v_0,h_0)
-
-    print('El tiempo de caída es: ', round(max(t1, t2), 2), ' segundos.')
+    #usamos la funcion tiempo_caida_libre que se encuentra en funciones.py
+    print('El tiempo de caída es: ',funciones.tiempo_caida_libre(v_0,h_0), ' segundos.')
     confirmar_volver_menu()
 
 
