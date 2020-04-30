@@ -3,19 +3,14 @@ import sys
 from src import funciones
 
 def generar_menu(lista):
-    print()
     num=1
     for elem in lista:
         print("     "+str(num) +". " + elem)
         num+=1
     print()
 
-
-
 def print_menu():
-    print()
-    print("CAÍDA LIBRE")
-
+    print_mensaje_entre_espacios("CAÍDA LIBRE")
     lista =["Determinar el tiempo de caída.","Hallar la posición de un objeto a partir de otros datos.",
             "Conocer la altura máxima de un objeto lanzado hacia arriba.","¿Desde qué altura se lanza?",
             "Salir"]
@@ -38,7 +33,7 @@ def select_menu_option():
 def run():
     salir = False
     while not salir:
-        os.system('clear')
+        os.system("clear")
         print_menu()
         opcion= select_menu_option()
         action_menu(opcion)
@@ -54,12 +49,9 @@ def action_menu(opcion):
         caso4()
     elif opcion == 5:
         salir()
-
-
+        
 def caso1():
-    print('') #Dejamos un espacio
-    print('Determinaremos el tiempo de caída libre a partir  de algunos datos.')
-    print('')
+    print_mensaje_entre_espacios('Determinaremos el tiempo de caída libre a partir  de algunos datos.')
     h_0 = float(input('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')) #creamos la variable h_0 (es un número real por
     #eso usamos float)
     v_0 = float(input('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = '))
