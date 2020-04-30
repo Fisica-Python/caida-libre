@@ -4,4 +4,3 @@
 from src import cli_interface
 
 cli_interface.run()
-
