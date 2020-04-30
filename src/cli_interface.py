@@ -28,7 +28,7 @@ def select_menu_option():
 
 
 def run():
-    while not True:
+    while True:
         os.system("clear")
         print_menu()
         opcion = select_menu_option()
