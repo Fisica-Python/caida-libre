@@ -71,9 +71,7 @@ def caso1():
 
 
 def caso2():
-    print('') #Dejamos un espacio
-    print('Podemos conocer la altura de un objeto en determinado tiempo o bien saber en qué momento se encuentra para cierta altura.')
-    print('')
+    print_mensaje_entre_espacios('Podemos conocer la altura de un objeto en determinado tiempo o bien saber en qué momento se encuentra para cierta altura.')
     h_0 = float(input('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')) #creamos la variable h_0
     v_0 = float(input('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = '))
     #creamos la variable v_0
@@ -96,9 +94,7 @@ def caso2():
     confirmar_volver_menu()
 
 def caso3():
-    print('') #Dejamos un espacio
-    print ('Calcularemos la altura máxima que alcanza un objeto lanzado hacia arriba.')
-    print('')
+    print_mensaje_entre_espacios ('Calcularemos la altura máxima que alcanza un objeto lanzado hacia arriba.')
     h_0= float(input('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')) #creamos la variable h_0
     v_0=float(input('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = ')) #creamos la variable v_0
     if v_0 <= 0:
@@ -117,9 +113,7 @@ def caso3():
         print('El cuerpo alcanza su máxima altura en un tiempo de ', t_hmax,' segundos, y tiene un valor de ', h_max, ' metros.')
     confirmar_volver_menu()
 def caso4():
-    print('') #Dejamos un espacio
-    print ('Suponga que se suelta un objeto desde cierta altura, que llamaremos h_0. Vamos a calcularla suponiendo que conocemos el tiempo de caída (t_caída).')
-    print('')
+    print_mensaje_entre_espacios('Suponga que se suelta un objeto desde cierta altura, que llamaremos h_0. Vamos a calcularla suponiendo que conocemos el tiempo de caída (t_caída).')
     t_caida = float(input('Ingrese el tiempo de caída (en segundos), t_caída= '))#ingresamos la variable t_caida
     #A partir de la ecuación de posición y = h_0 + v_0.t - 1/2.g.t²
     # despejamos h_0 imponiendo la condición y=0.
@@ -136,6 +130,11 @@ def salir():
 
 def confirmar_volver_menu():
     input('Presione enter para volver al menú. ')
+
+def print_mensaje_entre_espacios(mensaje):
+    print("")
+    print(mensaje)
+    print()
 
 
 
