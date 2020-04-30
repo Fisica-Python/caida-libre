@@ -2,6 +2,7 @@ import os
 import sys
 from src import funciones
 
+
 def generar_menu(lista):
     num = 1
     for elem in lista:
@@ -27,8 +28,7 @@ def select_menu_option():
 
 
 def run():
-    salir = False
-    while not salir:
+    while not True:
         os.system("clear")
         print_menu()
         opcion = select_menu_option()
@@ -94,9 +94,9 @@ def caso2():
 
 def caso3():
     print_mensaje_entre_espacios('Calcularemos la altura máxima que alcanza un objeto lanzado hacia arriba.')
-    h_0 = solicitar_numero_float('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')  # creamos la variable h_0
+    h_0 = solicitar_numero_float('Ingrese la altura inicial del cuerpo (en metros): h_0 = ')
     v_0 = solicitar_numero_float('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando '
-                                 'se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = ')  # creamos la variable v_0
+                                 'se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = ')
     if v_0 <= 0:
         print('Si el objeto parte del reposo o es lanzado hacia abajo, la altura máxima será la altura inicial,'
               ' es decir ', h_0, ' metros.')
@@ -120,15 +120,16 @@ def caso4():
     print_mensaje_entre_espacios(
         'Suponga que se suelta un objeto desde cierta altura, que llamaremos h_0. Vamos a calcularla suponiendo que '
         'conocemos el tiempo de caída (t_caída).')
-    t_caida = solicitar_numero_float('Ingrese el tiempo de caída (en segundos), t_caída= ')  # ingresamos la variable t_caida
+    t_caida = solicitar_numero_float(
+        'Ingrese el tiempo de caída (en segundos), t_caída= ')  # ingresamos la variable t_caida
     # A partir de la ecuación de posición y = h_0 + v_0.t - 1/2.g.t²
     # despejamos h_0 imponiendo la condición y=0.
     if t_caida < 0:
         print('Un valor negativo para el tiempo no tiene mucho sentido en este contexto. Revise sus datos.')
     else:
         h_0 = round(4.9 * t_caida ** 2, 2)
-    # Como el objeto se suelta (asumimos velocidad inicial 0)
-    print('El objeto se suelta desde una altura de ', h_0, ' metros.')
+        # Como el objeto se suelta (asumimos velocidad inicial 0)
+        print('El objeto se suelta desde una altura de ', h_0, ' metros.')
     confirmar_volver_menu()
 
 
@@ -148,6 +149,7 @@ def print_mensaje_entre_espacios(mensaje):
 
 def solicitar_numero(mensaje, funcion):
     valido = False
+    numero = None
     while not valido:
         try:
             numero = funcion(input(mensaje))
