@@ -1,5 +1,6 @@
 # caida-libre
 Estudio de caída libre (Mecánica)
+Colaboración de Santiago Soto
 
 La intención es que todos los interesados puedan colaborar con este proyecto para intercambiar ideas.
 
