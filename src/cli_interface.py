@@ -55,7 +55,7 @@ def action_menu(opcion):
 def caso1():
     print_mensaje_entre_espacios('Determinaremos el tiempo de caída libre a partir  de algunos datos.')
     h_0 = solicitar_numero_float(
-        "'Ingrese la altura inicial del cuerpo (en metros): h_0 = '")  # creamos la variable h_0 (es un número real por
+        'Ingrese la altura inicial del cuerpo (en metros): h_0 = ')  # creamos la variable h_0 (es un número real por
     # eso usamos float)
     v_0 = solicitar_numero_float('Ingrese la velocidad inicial del cuerpo (en m/s) recuerde que será negativa cuando'
                                  ' se lance hacia abajo y positiva si se lanza hacia arriba: v_0 = ')
